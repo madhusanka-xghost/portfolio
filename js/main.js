@@ -32,6 +32,16 @@
         // Check for sections in view on initial load
         checkSectionsInView();
         
+        // Initialize AOS (Animate on Scroll)
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: false,
+                mirror: true
+            });
+        }
+        
         // Log initialization success (dev only)
         console.log('Portfolio initialized successfully');
     });

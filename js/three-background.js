@@ -86,9 +86,9 @@
         geometry = new THREE.BufferGeometry();
         
         // Create particle positions and velocities
-        const particles = config.particleCount;
-        const positions = new Float32Array(particles * 3);
-        const velocities = new Float32Array(particles * 3);
+        const particleCount = config.particleCount;
+        const positions = new Float32Array(particleCount * 3);
+        const velocities = new Float32Array(particleCount * 3);
         
         // Set random positions and velocities
         for (let i = 0; i < positions.length; i += 3) {
