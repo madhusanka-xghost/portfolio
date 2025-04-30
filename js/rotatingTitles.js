@@ -111,12 +111,9 @@
             // Use textContent for safe update without XSS risk
             titleElement.textContent = text;
             
-            // Add blinking cursor effect when not deleting
-            if (!isDeleting && text.length > 0) {
-                titleElement.classList.add('typewriter');
-            } else if (text.length === 0) {
-                titleElement.classList.remove('typewriter');
-            }
+            // Always keep the blinking cursor effect
+            // The cursor is styled in CSS with the typewriter class
+            titleElement.classList.add('typewriter');
         }
     }
 
