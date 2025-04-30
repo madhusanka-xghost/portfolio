@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="#00f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Tech-themed abstract portrait for cybersecurity professional -->
+  <defs>
+    <linearGradient id="headGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#c000ff" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="circuitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circuit pattern -->
+  <circle cx="256" cy="256" r="250" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.3"/>
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.2"/>
+  
+  <!-- Circuit lines -->
+  <path d="M100,256 L150,256" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M362,256 L412,256" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M256,100 L256,150" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M256,362 L256,412" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+  
+  <!-- Additional circuit details -->
+  <circle cx="150" cy="256" r="4" fill="#00f0ff" fill-opacity="0.7"/>
+  <circle cx="362" cy="256" r="4" fill="#00f0ff" fill-opacity="0.7"/>
+  <circle cx="256" cy="150" r="4" fill="#00f0ff" fill-opacity="0.7"/>
+  <circle cx="256" cy="362" r="4" fill="#00f0ff" fill-opacity="0.7"/>
+  
+  <!-- Diagonal lines -->
+  <path d="M170,170 L200,200" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5"/>
+  <path d="M312,170 L282,200" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5"/>
+  <path d="M170,342 L200,312" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5"/>
+  <path d="M312,342 L282,312" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.5"/>
+  
+  <!-- Head silhouette -->
+  <circle cx="256" cy="210" r="80" fill="url(#headGradient)" stroke="#00f0ff" stroke-width="2"/>
+  
+  <!-- Face features (minimal, abstract) -->
+  <circle cx="230" cy="190" r="3" fill="#00f0ff"/>
+  <circle cx="282" cy="190" r="3" fill="#00f0ff"/>
+  
+  <!-- Abstract binary pattern on head -->
+  <text x="226" y="170" font-family="monospace" font-size="8" fill="#00f0ff" fill-opacity="0.7">10110</text>
+  <text x="246" y="180" font-family="monospace" font-size="8" fill="#00f0ff" fill-opacity="0.7">01001</text>
+  <text x="266" y="170" font-family="monospace" font-size="8" fill="#00f0ff" fill-opacity="0.7">11010</text>
+  <text x="236" y="190" font-family="monospace" font-size="8" fill="#00f0ff" fill-opacity="0.7">10101</text>
+  
+  <!-- Body outline -->
+  <path d="M200,290 L200,350 Q256,380 312,350 L312,290 Q256,320 200,290" fill="url(#circuitGradient)" stroke="#00f0ff" stroke-width="2"/>
+  
+  <!-- Shield icon representing cybersecurity -->
+  <path d="M256,330 L276,340 Q276,360 256,370 Q236,360 236,340 L256,330" fill="none" stroke="#00f0ff" stroke-width="2"/>
+  <path d="M256,338 L266,344 Q266,356 256,362 Q246,356 246,344 L256,338" fill="#00f0ff" fill-opacity="0.3" stroke="#00f0ff" stroke-width="1"/>
+  
+  <!-- Digital nodes connecting the figure -->
+  <circle cx="170" cy="290" r="3" fill="#00f0ff"/>
+  <circle cx="342" cy="290" r="3" fill="#00f0ff"/>
+  <path d="M170,290 L200,290" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+  <path d="M312,290 L342,290" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.7"/>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" fill="none">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#c000ff"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#00f0ff" flood-opacity="0.3" result="coloredBlur"/>
+      <feComposite in="coloredBlur" in2="blur" operator="in" result="glowBlur"/>
+      <feMerge>
+        <feMergeNode in="glowBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hexagonal background representing cybersecurity shield -->
+  <path d="M100,20 L160,50 L160,80 L100,110 L40,80 L40,50 Z" stroke="url(#logoGradient)" stroke-width="4" fill="none" opacity="0.3" filter="url(#glow)"/>
+  
+  <!-- M letter for Madhusanka -->
+  <path d="M55,40 L65,40 L75,60 L85,40 L95,40 L95,80 L85,80 L85,55 L75,75 L65,55 L65,80 L55,80 Z" fill="#00f0ff" filter="url(#glow)"/>
+  
+  <!-- N letter for Nayanajith -->
+  <path d="M105,40 L115,40 L135,70 L135,40 L145,40 L145,80 L135,80 L115,50 L115,80 L105,80 Z" fill="#c000ff" filter="url(#glow)"/>
+  
+  <!-- Binary code representing digital security expertise -->
+  <text x="55" y="95" font-family="monospace" font-size="10" fill="#00f0ff" opacity="0.7">10110</text>
+  <text x="115" y="95" font-family="monospace" font-size="10" fill="#c000ff" opacity="0.7">01001</text>
+  
+  <!-- Circuit line elements -->
+  <line x1="30" y1="65" x2="40" y2="65" stroke="#00f0ff" stroke-width="2" opacity="0.7"/>
+  <line x1="160" y1="65" x2="170" y2="65" stroke="#c000ff" stroke-width="2" opacity="0.7"/>
+  <circle cx="30" cy="65" r="2" fill="#00f0ff" opacity="0.9"/>
+  <circle cx="170" cy="65" r="2" fill="#c000ff" opacity="0.9"/>
+  
+  <!-- Shield icon node -->
+  <path d="M100,25 L110,30 Q110,40 100,45 Q90,40 90,30 Z" stroke-width="1.5" stroke="#00f0ff" fill="none" opacity="0.7"/>
+</svg>

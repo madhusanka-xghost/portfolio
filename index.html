@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Madhusanka Nayanajith - Cybersecurity Professional Portfolio">
+    <meta name="author" content="Madhusanka Nayanajith">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://kit.fontawesome.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.credly.com data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
+    <meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    
+    <title>Madhusanka Nayanajith | Cybersecurity Professional</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-dark': '#0a0e17',
+                        'cyber-darker': '#060a12',
+                        'cyber-light': '#f0f6ff',
+                        'neon-blue': '#00f0ff',
+                        'neon-purple': '#c000ff',
+                        'neon-green': '#00ff8c',
+                    },
+                    fontFamily: {
+                        'cyber': ['Orbitron', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-blue': '0 0 5px #00f0ff, 0 0 20px rgba(0, 240, 255, 0.3)',
+                        'neon-purple': '0 0 5px #c000ff, 0 0 20px rgba(192, 0, 255, 0.3)',
+                        'neon-green': '0 0 5px #00ff8c, 0 0 20px rgba(0, 255, 140, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3010d94d2f.js" crossorigin="anonymous"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha512-334uBDwY0iZ2TklV1OtDtBW9vp7jjP7SWRzT7Ehu1fdtPIjTpCwTSFb8HI/YBau9L1/kRBEOALrS229Kry4yFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="bg-cyber-dark text-cyber-light dark overflow-x-hidden">
+    <!-- Canvas for Three.js background -->
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="#" class="text-neon-blue font-cyber text-xl md:text-2xl font-bold flex items-center">
+                    <span class="inline-block mr-2">M<span class="text-neon-purple">N</span></span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
+                    <a href="#certifications" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
+                    <a href="#projects" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-cyber-light focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile navigation menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-cyber-darker absolute left-0 right-0 p-4 mt-2 border-t border-neon-blue/20 shadow-neon-blue">
+                <div class="flex flex-col space-y-4">
+                    <a href="#about" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">About</a>
+                    <a href="#skills" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
+                    <a href="#certifications" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
+                    <a href="#projects" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
+                    <a href="#contact" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <div class="container mx-auto px-4 z-10">
+                <div class="text-center">
+                    <h1 class="font-cyber text-4xl md:text-6xl lg:text-7xl font-bold mb-4 text-cyber-light">
+                        Madhusanka <span class="text-neon-blue">Nayanajith</span>
+                    </h1>
+                    <div class="h-12 overflow-hidden relative">
+                        <p id="rotating-title" class="font-mono text-xl md:text-2xl lg:text-3xl text-neon-purple typewriter"></p>
+                    </div>
+                    <div class="mt-8 flex justify-center gap-4">
+                        <a href="#about" class="px-6 py-3 bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/10 font-cyber rounded-md transition-all">
+                            Discover More
+                        </a>
+                        <a href="#contact" class="px-6 py-3 bg-neon-blue text-cyber-darker border-2 border-neon-blue hover:bg-transparent hover:text-neon-blue font-cyber rounded-md transition-all">
+                            Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-cyber-light animate-bounce">
+                <a href="#about" aria-label="Scroll down">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-cyber-darker relative">
+            <div class="container mx-auto px-4 z-10">
+                <h2 class="text-3xl md:text-4xl font-cyber font-bold text-center mb-12 relative inline-block">
+                    <span class="text-neon-blue">About</span> Me
+                    <span class="block h-1 w-full bg-neon-blue mt-2"></span>
+                </h2>
+                <div class="flex flex-col lg:flex-row items-center gap-10">
+                    <div class="w-full lg:w-1/3 flex justify-center">
+                        <div class="relative w-64 h-64 rounded-full border-4 border-neon-blue/50 overflow-hidden shadow-neon-blue flex items-center justify-center bg-cyber-dark">
+                            <!-- Profile Icon as SVG -->
+                            <svg class="w-48 h-48 text-neon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-2/3">
+                        <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-blue/20">
+                            <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-purple">Cybersecurity Professional</h3>
+                            <p class="text-cyber-light mb-4 font-mono leading-relaxed">
+                                Passionate cybersecurity expert with a strong foundation in network security, threat analysis, 
+                                and security operations. I specialize in identifying vulnerabilities, implementing robust security 
+                                solutions, and ensuring system integrity across diverse environments.
+                            </p>
+                            <p class="text-cyber-light mb-6 font-mono leading-relaxed">
+                                With expertise in SOC operations, penetration testing, and security consulting, I continuously 
+                                stay updated with the latest threats and countermeasures in the ever-evolving 
+                                cybersecurity landscape.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono">
+                                <div class="flex items-center">
+                                    <i class="fas fa-shield-alt text-neon-blue mr-2"></i>
+                                    <span>Security Analysis</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-network-wired text-neon-blue mr-2"></i>
+                                    <span>Network Security</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-bug text-neon-blue mr-2"></i>
+                                    <span>Penetration Testing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-code text-neon-blue mr-2"></i>
+                                    <span>Secure Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-cyber-dark relative">
+            <div class="container mx-auto px-4 z-10">
+                <h2 class="text-3xl md:text-4xl font-cyber font-bold text-center mb-12 relative inline-block">
+                    <span class="text-neon-green">My</span> Skills
+                    <span class="block h-1 w-full bg-neon-green mt-2"></span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Security Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shield-alt text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Security Operations</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>SIEM Implementation & Management</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Threat Hunting & Analysis</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Incident Response</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Log Analysis</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Network Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-network-wired text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Network Security</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Firewall Configuration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>VPN Implementation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Network Monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>IDS/IPS Management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Web Security Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-globe text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Web Security</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>OWASP Top 10 Mitigation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Security Headers Implementation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>WAF Configuration</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Secure Coding Practices</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tools Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tools text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Security Tools</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Wireshark</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Metasploit</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Nmap</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Burp Suite</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Cloud Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-cloud text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Cloud Security</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>AWS Security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Azure Security</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Cloud Configuration Review</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Secure Architecture Design</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Compliance Skills -->
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-clipboard-check text-neon-green text-2xl mr-3"></i>
+                            <h3 class="text-xl font-cyber font-bold">Compliance & Governance</h3>
+                        </div>
+                        <ul class="space-y-2 font-mono">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>ISO 27001</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>GDPR</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Security Policy Development</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-neon-green mr-2"></i>
+                                <span>Risk Assessment</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 bg-cyber-darker relative">
+            <div class="container mx-auto px-4 z-10">
+                <h2 class="text-3xl md:text-4xl font-cyber font-bold text-center mb-12 relative inline-block">
+                    <span class="text-neon-purple">My</span> Certifications
+                    <span class="block h-1 w-full bg-neon-purple mt-2"></span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Cisco CyberOps -->
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group">
+                        <div class="mb-4 flex justify-center">
+                            <div class="bg-cyber-dark w-32 h-32 flex items-center justify-center rounded-full border-2 border-neon-purple group-hover:bg-neon-purple/5 transition-all">
+                                <i class="fas fa-shield-alt text-5xl text-neon-purple"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco CyberOps</h3>
+                        <p class="text-center text-cyber-light/70 font-mono mb-4">
+                            Security Operations Center (SOC) skills certification validating knowledge in security concepts, security monitoring, and attack methods.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="https://www.credly.com/badges" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                                <i class="fas fa-certificate mr-2"></i>
+                                View Badge
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cisco Cybersecurity Essentials -->
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group">
+                        <div class="mb-4 flex justify-center">
+                            <div class="bg-cyber-dark w-32 h-32 flex items-center justify-center rounded-full border-2 border-neon-purple group-hover:bg-neon-purple/5 transition-all">
+                                <i class="fas fa-lock text-5xl text-neon-purple"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco Cybersecurity Essentials</h3>
+                        <p class="text-center text-cyber-light/70 font-mono mb-4">
+                            Foundational cybersecurity knowledge covering security principles, technologies, and procedures to protect networks.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="https://www.credly.com/badges" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                                <i class="fas fa-certificate mr-2"></i>
+                                View Badge
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cisco IT Essentials -->
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group">
+                        <div class="mb-4 flex justify-center">
+                            <div class="bg-cyber-dark w-32 h-32 flex items-center justify-center rounded-full border-2 border-neon-purple group-hover:bg-neon-purple/5 transition-all">
+                                <i class="fas fa-desktop text-5xl text-neon-purple"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco IT Essentials</h3>
+                        <p class="text-center text-cyber-light/70 font-mono mb-4">
+                            Comprehensive understanding of computer hardware, software, operating systems, peripherals, and basic networking.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="https://www.credly.com/badges" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                                <i class="fas fa-certificate mr-2"></i>
+                                View Badge
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add More Certifications Notice -->
+                <div class="mt-12 text-center">
+                    <p class="text-cyber-light/70 italic font-mono">More certifications will be added as they are completed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-cyber-dark relative">
+            <div class="container mx-auto px-4 z-10">
+                <h2 class="text-3xl md:text-4xl font-cyber font-bold text-center mb-12 relative inline-block">
+                    <span class="text-neon-blue">My</span> Projects
+                    <span class="block h-1 w-full bg-neon-blue mt-2"></span>
+                </h2>
+                
+                <!-- Filter buttons -->
+                <div class="flex flex-wrap justify-center mb-8 gap-2">
+                    <button data-filter="all" class="project-filter active px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                        All
+                    </button>
+                    <button data-filter="security" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                        Security
+                    </button>
+                    <button data-filter="web" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                        Web
+                    </button>
+                    <button data-filter="network" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                        Network
+                    </button>
+                </div>
+                
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="security">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-shield-virus text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">SIEM Implementation</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Designed and deployed a Security Information and Event Management system for real-time threat monitoring and analysis.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Automation</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="web">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-code text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Secure Web Application</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Developed a web application with robust security features, including JWT authentication and XSS protection.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">JavaScript</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="network">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-network-wired text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Network Monitoring Tool</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Created a custom network monitoring solution to detect and alert on suspicious network activities.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="security">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-file-shield text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Security Documentation Framework</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Developed a comprehensive security documentation framework for organizations to streamline compliance efforts.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Compliance</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Documentation</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="web">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-bug text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Web Vulnerability Scanner</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Built an automated tool to scan websites for common security vulnerabilities with detailed reporting.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="network">
+                        <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
+                            <i class="fas fa-server text-neon-blue text-6xl group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Secure Server Hardening</h3>
+                            <p class="text-cyber-light/80 font-mono text-sm mb-4">
+                                Developed an automated script to harden Linux servers following CIS benchmarks and security best practices.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Linux</span>
+                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Shell</span>
+                            </div>
+                            <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
+                                <span>View Details</span>
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-cyber-darker relative">
+            <div class="container mx-auto px-4 z-10">
+                <h2 class="text-3xl md:text-4xl font-cyber font-bold text-center mb-12 relative inline-block">
+                    <span class="text-neon-green">Contact</span> Me
+                    <span class="block h-1 w-full bg-neon-green mt-2"></span>
+                </h2>
+                
+                <div class="max-w-2xl mx-auto bg-cyber-dark p-8 rounded-lg shadow-lg border border-neon-green/20">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-cyber mb-4 text-cyber-light">Let's Work Together</h3>
+                        <p class="text-cyber-light/70 font-mono">
+                            Interested in collaborating or have a project in mind? Feel free to reach out to me directly.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center space-y-6">
+                        <a href="mailto:contact@ciphertech.com" class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-neon-green text-cyber-dark font-cyber rounded-lg shadow-neon-green transition-all hover:bg-transparent hover:text-neon-green border-2 border-neon-green text-lg">
+                            <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
+                            <span>contact@ciphertech.com</span>
+                        </a>
+                        
+                        <div class="flex justify-center space-x-6 mt-6">
+                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-dark py-8 border-t border-neon-blue/20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="text-neon-blue font-cyber text-xl font-bold flex items-center">
+                        <span>Madhusanka Nayanajith</span>
+                    </a>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="text-cyber-light/70 font-mono text-sm mb-2">
+                        &copy; <span id="current-year"></span> All Rights Reserved
+                    </p>
+                    <p class="text-cyber-light/50 font-mono text-xs">
+                        Cybersecurity Professional
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-neon-blue/80 text-cyber-dark w-12 h-12 rounded-full flex items-center justify-center shadow-neon-blue opacity-0 invisible transition-all z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/three-background.js"></script>
+    <script src="js/rotatingTitles.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+</html>
