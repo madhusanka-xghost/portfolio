@@ -64,7 +64,7 @@
 </head>
 <body class="bg-cyber-dark text-cyber-light dark overflow-x-hidden">
     <!-- Canvas for Three.js background -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -10;"></canvas>
 
     <!-- Header & Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="main-header">
@@ -614,13 +614,13 @@
                         
                         <div class="flex justify-center space-x-6 mt-6">
                             <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
-                                <i class="fab fa-linkedin-in"></i>
+                                <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
                             <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
-                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-twitter text-xl"></i>
                             </a>
                             <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green hover:bg-neon-green hover:text-cyber-dark transition-all">
-                                <i class="fab fa-github"></i>
+                                <i class="fab fa-github text-xl"></i>
                             </a>
                         </div>
                     </div>
@@ -662,11 +662,93 @@
     <script src="js/rotatingTitles.js"></script>
     <script src="js/navigation.js"></script>
     <script>
-        // Ensure Three.js background is initialized
+        // Direct implementation of Three.js background
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.threeBackground) {
-                window.threeBackground.init();
+            const canvas = document.getElementById('bg-canvas');
+            
+            if (!canvas || typeof THREE === 'undefined') {
+                console.error('Canvas element not found or Three.js not loaded');
+                return;
             }
+            
+            // Scene setup
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            
+            // Create particles
+            const particleCount = 500;
+            const particles = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+            
+            for (let i = 0; i < positions.length; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 2000;     // x
+                positions[i + 1] = (Math.random() - 0.5) * 1000; // y
+                positions[i + 2] = (Math.random() - 0.5) * 1000; // z
+            }
+            
+            particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            
+            // Create particle material
+            const particleMaterial = new THREE.PointsMaterial({
+                color: 0x00f0ff,
+                size: 5,
+                transparent: true,
+                opacity: 0.8,
+                sizeAttenuation: true
+            });
+            
+            // Create particle system
+            const particleSystem = new THREE.Points(particles, particleMaterial);
+            scene.add(particleSystem);
+            
+            // Position camera
+            camera.position.z = 500;
+            
+            // Animation
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+            const windowHalfX = window.innerWidth / 2;
+            const windowHalfY = window.innerHeight / 2;
+            
+            // Mouse move event
+            document.addEventListener('mousemove', function(event) {
+                mouseX = (event.clientX - windowHalfX) / 100;
+                mouseY = (event.clientY - windowHalfY) / 100;
+            });
+            
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                targetX = mouseX * 0.5;
+                targetY = mouseY * 0.5;
+                
+                particleSystem.rotation.x += 0.0005;
+                particleSystem.rotation.y += 0.0005;
+                
+                particleSystem.rotation.x += (targetY - particleSystem.rotation.x) * 0.01;
+                particleSystem.rotation.y += (targetX - particleSystem.rotation.y) * 0.01;
+                
+                renderer.render(scene, camera);
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+            
+            // Start animation
+            animate();
+            
+            console.log('Three.js background initialized with', particleCount, 'particles');
         });
     </script>
 </body>
