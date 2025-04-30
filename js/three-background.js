@@ -38,7 +38,12 @@
 
     // Initialize the scene
     function init() {
+        // Check if canvas exists first
+        canvas = document.getElementById('bg-canvas');
+        
         if (!canvas || isInitialized) return;
+        
+        // Mark as initialized to prevent duplicate initialization
         isInitialized = true;
 
         // Create scene

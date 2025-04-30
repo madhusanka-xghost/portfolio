@@ -661,5 +661,13 @@
     <script src="js/three-background.js"></script>
     <script src="js/rotatingTitles.js"></script>
     <script src="js/navigation.js"></script>
+    <script>
+        // Ensure Three.js background is initialized
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.threeBackground) {
+                window.threeBackground.init();
+            }
+        });
+    </script>
 </body>
 </html>
