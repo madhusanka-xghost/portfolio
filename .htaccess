@@ -1,0 +1,41 @@
+# Anti-clickjacking header
+Header always set X-Frame-Options "DENY"
+Header always set Content-Security-Policy "frame-ancestors 'none'"
+
+# Prevent browser from detecting content type
+Header always set X-Content-Type-Options "nosniff"
+
+# Disable directory browsing
+Options -Indexes
+
+# Protect source code files
+<FilesMatch "\.(php|js|css)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+
+# Protect against SQL injection
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    RewriteRule ^(.*)$ index.php [F,L]
+</IfModule>
+
+# Add cache control headers
+<IfModule mod_headers.c>
+    # One year for image and video files
+    <FilesMatch "\.(jpg|jpeg|png|gif|ico|webp|mp4|webm)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+    
+    # One month for CSS and JavaScript
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
