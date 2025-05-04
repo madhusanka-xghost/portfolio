@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Madhusanka Nayanajith - Cybersecurity Professional Portfolio">
+    <meta name="description" content="Madhusanka Nayanajith Portfolio">
     <meta name="author" content="Madhusanka Nayanajith">
-    
+
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://kit.fontawesome.com https://unpkg.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.credly.com data:; connect-src 'self';">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://kit.fontawesome.com https://unpkg.com 'unsafe-inline'; style-src 'self' https://cdn.tailwindcss.com https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://images.credly.com data:; connect-src 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="no-referrer-when-downgrade">
     <meta name="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-    
-    <title>Madhusanka Nayanajith | Cybersecurity Professional</title>
-    
+
+    <!-- Simple screen capture protection -->
+    <meta name="screen-capture" content="no">
+
+    <!-- Anti-clickjacking headers -->
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+
+    <!-- Disable caching for sensitive pages -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, proxy-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Add current timestamp for cache busting -->
+    <meta name="timestamp" content="2025-05-04 19:20:52">
+
+    <!-- Add the security protection script -->
+    <script src="js/security.js"></script>
+
+    <title>Madhusanka Nayanajith</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -45,26 +65,32 @@
             },
         }
     </script>
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/3010d94d2f.js" crossorigin="anonymous"></script>
-    
+
     <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha512-334uBDwY0iZ2TklV1OtDtBW9vp7jjP7SWRzT7Ehu1fdtPIjTpCwTSFb8HI/YBau9L1/kRBEOALrS229Kry4yFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        integrity="sha512-334uBDwY0iZ2TklV1OtDtBW9vp7jjP7SWRzT7Ehu1fdtPIjTpCwTSFb8HI/YBau9L1/kRBEOALrS229Kry4yFQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- AOS - Animate on Scroll Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
+
 <body class="bg-cyber-dark text-cyber-light dark overflow-x-hidden">
     <!-- Canvas for Three.js background -->
-    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -10;"></canvas>
+    <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -10;"></canvas>
 
     <!-- Header & Navigation -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="main-header">
@@ -73,31 +99,43 @@
                 <a href="#" class="text-neon-blue font-cyber text-xl md:text-2xl font-bold flex items-center">
                     <span class="inline-block mr-2">CYPHER<span class="text-neon-purple">TECH</span></span>
                 </a>
-                
+
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">About</a>
-                    <a href="#skills" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
-                    <a href="#certifications" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
-                    <a href="#projects" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
-                    <a href="#contact" class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
+                    <a href="#skills"
+                        class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
+                    <a href="#certifications"
+                        class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
+                    <a href="#projects"
+                        class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
+                    <a href="#contact"
+                        class="nav-link text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <button id="mobile-menu-button" class="md:hidden text-cyber-light focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </nav>
-            
+
             <!-- Mobile navigation menu -->
-            <div id="mobile-menu" class="md:hidden hidden bg-cyber-darker absolute left-0 right-0 p-4 mt-2 border-t border-neon-blue/20 shadow-neon-blue">
+            <div id="mobile-menu"
+                class="md:hidden hidden bg-cyber-darker absolute left-0 right-0 p-4 mt-2 border-t border-neon-blue/20 shadow-neon-blue">
                 <div class="flex flex-col space-y-4">
-                    <a href="#about" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">About</a>
-                    <a href="#skills" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
-                    <a href="#certifications" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
-                    <a href="#projects" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
-                    <a href="#contact" class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
+                    <a href="#about"
+                        class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">About</a>
+                    <a href="#skills"
+                        class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Skills</a>
+                    <a href="#certifications"
+                        class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Certifications</a>
+                    <a href="#projects"
+                        class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Projects</a>
+                    <a href="#contact"
+                        class="nav-link-mobile text-cyber-light hover:text-neon-blue transition-colors">Contact</a>
                 </div>
             </div>
         </div>
@@ -112,13 +150,16 @@
                         Madhusanka <span class="text-neon-blue">Nayanajith</span>
                     </h1>
                     <div class="h-12 overflow-hidden relative">
-                        <p id="rotating-title" class="font-mono text-xl md:text-2xl lg:text-3xl text-neon-purple typewriter"></p>
+                        <p id="rotating-title"
+                            class="font-mono text-xl md:text-2xl lg:text-3xl text-neon-purple typewriter"></p>
                     </div>
                     <div class="mt-8 flex justify-center gap-4">
-                        <a href="#about" class="px-6 py-3 bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/10 font-cyber rounded-md transition-all">
+                        <a href="#about"
+                            class="px-6 py-3 bg-transparent border-2 border-neon-blue text-neon-blue hover:bg-neon-blue/10 font-cyber rounded-md transition-all">
                             Discover More
                         </a>
-                        <a href="#contact" class="px-6 py-3 bg-neon-blue text-cyber-darker border-2 border-neon-blue hover:bg-transparent hover:text-neon-blue font-cyber rounded-md transition-all">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-neon-blue text-cyber-darker border-2 border-neon-blue hover:bg-transparent hover:text-neon-blue font-cyber rounded-md transition-all">
                             Get In Touch
                         </a>
                     </div>
@@ -126,8 +167,10 @@
             </div>
             <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-cyber-light animate-bounce">
                 <a href="#about" aria-label="Scroll down">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
                 </a>
             </div>
@@ -142,7 +185,8 @@
                 </h2>
                 <div class="flex flex-col lg:flex-row items-center gap-10">
                     <div class="w-full lg:w-1/3 flex justify-center" data-aos="fade-right" data-aos-delay="100">
-                        <div class="relative w-64 h-64 rounded-full border-4 border-neon-blue/50 overflow-hidden shadow-neon-blue flex items-center justify-center bg-cyber-dark">
+                        <div
+                            class="relative w-64 h-64 rounded-full border-4 border-neon-blue/50 overflow-hidden shadow-neon-blue flex items-center justify-center bg-cyber-dark">
                             <!-- Profile Icon as SVG -->
                             <!-- <svg class="w-48 h-48 text-neon-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -153,15 +197,19 @@
                     </div>
                     <div class="w-full lg:w-2/3" data-aos="fade-left" data-aos-delay="200">
                         <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-blue/20">
-                            <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-purple">Cybersecurity Professional</h3>
+                            <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-purple">Cybersecurity Professional
+                            </h3>
                             <p class="text-cyber-light mb-4 font-mono leading-relaxed">
-                                Passionate cybersecurity expert with a strong foundation in network security, threat analysis, 
-                                and security operations. I specialize in identifying vulnerabilities, implementing robust security 
+                                Passionate cybersecurity expert with a strong foundation in network security, threat
+                                analysis,
+                                and security operations. I specialize in identifying vulnerabilities, implementing
+                                robust security
                                 solutions, and ensuring system integrity across diverse environments.
                             </p>
                             <p class="text-cyber-light mb-6 font-mono leading-relaxed">
-                                With expertise in SOC operations, penetration testing, and security consulting, I continuously 
-                                stay updated with the latest threats and countermeasures in the ever-evolving 
+                                With expertise in SOC operations, penetration testing, and security consulting, I
+                                continuously
+                                stay updated with the latest threats and countermeasures in the ever-evolving
                                 cybersecurity landscape.
                             </p>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono">
@@ -195,10 +243,11 @@
                     <span class="text-neon-green">My</span> Skills
                     <span class="block h-1 w-full bg-neon-green mt-2"></span>
                 </h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Security Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="100">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="100">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-shield-alt text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Security Operations</h3>
@@ -222,9 +271,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Network Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="200">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="200">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-network-wired text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Network Security</h3>
@@ -248,9 +298,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Web Security Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="300">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="300">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-globe text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Web Security</h3>
@@ -274,9 +325,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Tools Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="400">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="400">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-tools text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Security Tools</h3>
@@ -288,7 +340,7 @@
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-neon-green mr-2"></i>
-                                <span>Metasploit</span>
+                                <span>ZAP</span>
                             </li>
                             <li class="flex items-center">
                                 <i class="fas fa-check text-neon-green mr-2"></i>
@@ -300,9 +352,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Cloud Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="500">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="500">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-cloud text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Cloud Security</h3>
@@ -326,9 +379,10 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <!-- Compliance Skills -->
-                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow" data-aos="flip-left" data-aos-delay="600">
+                    <div class="bg-cyber-darker p-6 rounded-lg shadow-lg border border-neon-green/20 hover:shadow-neon-green transition-shadow"
+                        data-aos="flip-left" data-aos-delay="600">
                         <div class="flex items-center mb-4">
                             <i class="fas fa-clipboard-check text-neon-green text-2xl mr-3"></i>
                             <h3 class="text-xl font-cyber font-bold">Compliance & Governance</h3>
@@ -363,74 +417,89 @@
                     <span class="text-neon-purple">My</span> Certifications
                     <span class="block h-1 w-full bg-neon-purple mt-2"></span>
                 </h2>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Cisco CyberOps -->
-                <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group"
-                    data-aos="zoom-in" data-aos-delay="100">
-                    <div class="mb-4 flex justify-center">
-                        <div
-                            class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
-                            <img src="assets/images/CyberOpsAssoc.png" alt="Cisco CyberOps Associate Badge"
-                                class="w-full h-full object-contain" srcset="">
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco CyberOps</h3>
-                    <p class="text-center text-cyber-light/70 font-mono mb-4">
-                        Security Operations Center (SOC) skills certification validating knowledge in security concepts, security
-                        monitoring, and attack methods.
-                    </p>
-                    <div class="flex justify-center">
-                        <a href="https://www.credly.com/badges" target="_blank" rel="noopener noreferrer"
-                            class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
-                            <i class="fas fa-certificate mr-2"></i>
-                            View Badge
-                        </a>
-                    </div>
-                </div>
-                    
-                    <!-- Cisco Cybersecurity Essentials -->
-                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group"
+                        data-aos="zoom-in" data-aos-delay="100">
                         <div class="mb-4 flex justify-center">
-                            <div class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
-                                <img src="assets/images/cybersecurity-essentials.png" alt="cybersecurity-essentials" srcset="">
+                            <div
+                                class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
+                                <img src="assets/images/CyberOpsAssoc.png" alt="Cisco CyberOps Associate Badge"
+                                    class="w-full h-full object-contain" srcset="">
                             </div>
                         </div>
-                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco Cybersecurity Essentials</h3>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco CyberOps</h3>
                         <p class="text-center text-cyber-light/70 font-mono mb-4">
-                            Foundational cybersecurity knowledge covering security principles, technologies, and procedures to protect networks.
+                            Security Operations Center (SOC) skills certification validating knowledge in security
+                            concepts, security
+                            monitoring, and attack methods.
                         </p>
                         <div class="flex justify-center">
-                            <a href="https://www.credly.com/badges/6c9fa3c0-0a90-4d9a-b82c-444fcc6b8f84/public_url" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                            <a href="https://www.credly.com/badges" target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
                                 <i class="fas fa-certificate mr-2"></i>
                                 View Badge
                             </a>
                         </div>
                     </div>
-                    
-                    <!-- Cisco IT Essentials -->
-                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group" data-aos="zoom-in" data-aos-delay="300">
+
+                    <!-- Cisco Cybersecurity Essentials -->
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group"
+                        data-aos="zoom-in" data-aos-delay="200">
                         <div class="mb-4 flex justify-center">
-                            <div class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
+                            <div
+                                class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
+                                <img src="assets/images/cybersecurity-essentials.png" alt="cybersecurity-essentials"
+                                    srcset="">
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco Cybersecurity
+                            Essentials</h3>
+                        <p class="text-center text-cyber-light/70 font-mono mb-4">
+                            Foundational cybersecurity knowledge covering security principles, technologies, and
+                            procedures to protect networks.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="https://www.credly.com/badges/6c9fa3c0-0a90-4d9a-b82c-444fcc6b8f84/public_url"
+                                target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                                <i class="fas fa-certificate mr-2"></i>
+                                View Badge
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cisco IT Essentials -->
+                    <div class="bg-cyber-dark p-6 rounded-lg shadow-lg border border-neon-purple/20 hover:shadow-neon-purple transition-all group"
+                        data-aos="zoom-in" data-aos-delay="300">
+                        <div class="mb-4 flex justify-center">
+                            <div
+                                class="bg-cyber-dark w-32 h-32 flex items-center justify-center group-hover:bg-neon-purple/5 transition-all overflow-hidden">
                                 <img src="assets/images/it-essentials.png" alt="it-essentials" srcset="">
                             </div>
                         </div>
-                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco IT Essentials</h3>
+                        <h3 class="text-xl font-cyber font-bold text-center mb-2 text-cyber-light">Cisco IT Essentials
+                        </h3>
                         <p class="text-center text-cyber-light/70 font-mono mb-4">
-                            Comprehensive understanding of computer hardware, software, operating systems, peripherals, and basic networking.
+                            Comprehensive understanding of computer hardware, software, operating systems, peripherals,
+                            and basic networking.
                         </p>
                         <div class="flex justify-center">
-                            <a href="https://www.credly.com/badges/75752138-c2c1-4b9f-914a-f40e43dd084f/public_url" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
+                            <a href="https://www.credly.com/badges/75752138-c2c1-4b9f-914a-f40e43dd084f/public_url"
+                                target="_blank" rel="noopener noreferrer"
+                                class="px-4 py-2 border border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-cyber-dark transition-all rounded font-cyber text-center inline-flex items-center">
                                 <i class="fas fa-certificate mr-2"></i>
                                 View Badge
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Add More Certifications Notice -->
                 <div class="mt-12 text-center">
-                    <p class="text-cyber-light/70 italic font-mono">More certifications will be added as they are completed.</p>
+                    <p class="text-cyber-light/70 italic font-mono">More certifications will be added as they are
+                        completed.</p>
                 </div>
             </div>
         </section>
@@ -442,39 +511,48 @@
                     <span class="text-neon-blue">My</span> Projects
                     <span class="block h-1 w-full bg-neon-blue mt-2"></span>
                 </h2>
-                
+
                 <!-- Filter buttons -->
                 <div class="flex flex-wrap justify-center mb-8 gap-2">
-                    <button data-filter="all" class="project-filter active px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                    <button data-filter="all"
+                        class="project-filter active px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
                         All
                     </button>
-                    <button data-filter="security" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                    <button data-filter="security"
+                        class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
                         Security
                     </button>
-                    <button data-filter="web" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                    <button data-filter="web"
+                        class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
                         Web
                     </button>
-                    <button data-filter="network" class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
+                    <button data-filter="network"
+                        class="project-filter px-4 py-2 bg-cyber-darker text-cyber-light border border-neon-blue/50 rounded hover:bg-neon-blue/10 transition-all font-cyber">
                         Network
                     </button>
                 </div>
-                
+
                 <!-- Projects Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                     <!-- Project 1 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="security" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="security" data-aos="fade-up" data-aos-delay="100">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">SIEM Implementation</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Designed and deployed a Security Information and Event Management system for real-time threat monitoring and analysis.
+                                Designed and deployed a Security Information and Event Management system for real-time
+                                threat monitoring and analysis.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Automation</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Automation</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -482,21 +560,26 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Project 2 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="web" data-aos="fade-up" data-aos-delay="200">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Secure Web Application</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Developed a web application with robust security features, including JWT authentication and XSS protection.
+                                Developed a web application with robust security features, including JWT authentication
+                                and XSS protection.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">JavaScript</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">JavaScript</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -504,21 +587,26 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Project 3 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="network" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="network" data-aos="fade-up" data-aos-delay="300">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Network Monitoring Tool</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Created a custom network monitoring solution to detect and alert on suspicious network activities.
+                                Created a custom network monitoring solution to detect and alert on suspicious network
+                                activities.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Monitoring</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -526,21 +614,27 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Project 4 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="security" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="security" data-aos="fade-up" data-aos-delay="400">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Security Documentation Framework</h3>
+                            <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Security Documentation
+                                Framework</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Developed a comprehensive security documentation framework for organizations to streamline compliance efforts.
+                                Developed a comprehensive security documentation framework for organizations to
+                                streamline compliance efforts.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Compliance</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Documentation</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Compliance</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Documentation</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -548,21 +642,26 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Project 5 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="web" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="web" data-aos="fade-up" data-aos-delay="500">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Web Vulnerability Scanner</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Built an automated tool to scan websites for common security vulnerabilities with detailed reporting.
+                                Built an automated tool to scan websites for common security vulnerabilities with
+                                detailed reporting.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Web</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Security</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Python</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -570,21 +669,26 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <!-- Project 6 -->
-                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group" data-category="network" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card bg-cyber-darker rounded-lg overflow-hidden shadow-lg border border-neon-blue/20 hover:shadow-neon-blue transition-all group"
+                        data-category="network" data-aos="fade-up" data-aos-delay="600">
                         <div class="h-48 bg-cyber-dark flex items-center justify-center p-4">
                             <img src="assets/images/skills.jpeg" alt="" srcset="">
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-cyber font-bold mb-2 text-neon-blue">Secure Server Hardening</h3>
                             <p class="text-cyber-light/80 font-mono text-sm mb-4">
-                                Developed an automated script to harden Linux servers following CIS benchmarks and security best practices.
+                                Developed an automated script to harden Linux servers following CIS benchmarks and
+                                security best practices.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Linux</span>
-                                <span class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Shell</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Network</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Linux</span>
+                                <span
+                                    class="px-2 py-1 bg-neon-blue/10 text-neon-blue text-xs rounded-full font-mono">Shell</span>
                             </div>
                             <a href="#" class="text-neon-blue hover:underline font-cyber inline-flex items-center">
                                 <span>View Details</span>
@@ -603,32 +707,38 @@
                     <span class="text-neon-green">Contact</span> Me
                     <span class="block h-1 w-full bg-neon-green mt-2"></span>
                 </h2>
-                
-                <div class="max-w-2xl mx-auto bg-cyber-dark p-8 rounded-lg shadow-lg border border-neon-green/20" data-aos="zoom-in">
+
+                <div class="max-w-2xl mx-auto bg-cyber-dark p-8 rounded-lg shadow-lg border border-neon-green/20"
+                    data-aos="zoom-in">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-cyber mb-4 text-cyber-light">Let's Work Together</h3>
                         <p class="text-cyber-light/70 font-mono">
-                            Interested in collaborating or have a project in mind? Feel free to reach out to me directly.
+                            Interested in collaborating or have a project in mind? Feel free to reach out to me
+                            directly.
                         </p>
                     </div>
-                    
+
                     <div class="flex flex-col items-center space-y-6">
-                        <a href="mailto:contact@ciphertech.com" class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-neon-green text-cyber-dark font-cyber rounded-lg shadow-neon-green border-2 border-neon-green text-lg">
+                        <a href="mailto:madhusankanayanajith@gmail.com"
+                            class="group flex items-center justify-center w-full md:w-auto px-8 py-4 bg-neon-green text-cyber-dark font-cyber rounded-lg shadow-neon-green border-2 border-neon-green text-lg">
                             <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>
                             <span>contact@ciphertech.com</span>
                         </a>
-                        
+
                         <div class="flex justify-center space-x-6 mt-6">
-                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green ">
+                            <a href="https://www.facebook.com/mr.madhuwa"
+                                class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green ">
                                 <img src="assets/images/facebook.png" alt="facebook" srcset="">
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green">
+                            <a href="https://www.github.com/madhusanka-xghost"
+                                class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green">
                                 <img src="assets/images/github.png" alt="github" srcset="">
                             </a>
-                            <a href="#" class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green ">
+                            <a href="https://wa.me/94776858004"
+                                class="w-12 h-12 rounded-full bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green ">
                                 <img src="assets/images/whatsapp.png" alt="whatsapp" srcset="">
                             </a>
-                            <a href="#"
+                            <a href="https://www.linkedin.com/in/madhusanka-nayanajith-415a532b1"
                                 class="w-12 h-12 bg-cyber-darker border border-neon-green/50 flex items-center justify-center text-neon-green">
                                 <img src="assets/images/linkdin.png" alt="linkdin" srcset="">
                             </a>
@@ -648,7 +758,7 @@
                         <span>Madhusanka Nayanajith</span>
                     </a>
                 </div>
-                
+
                 <div class="flex flex-col items-center md:items-end">
                     <p class="text-cyber-light/70 font-mono text-sm mb-2">
                         &copy; <span id="current-year"></span> All Rights Reserved
@@ -662,7 +772,8 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-neon-blue/80 text-cyber-dark w-12 h-12  flex items-center justify-center shadow-neon-blue opacity-0 invisible transition-all z-50">
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-neon-blue/80 text-cyber-dark w-12 h-12  flex items-center justify-center shadow-neon-blue opacity-0 invisible transition-all z-50">
         <img src="assets/images/back-to-top-btn.png" alt="back-to-top-btn" srcset="">
     </button>
 
@@ -673,35 +784,35 @@
     <script src="js/navigation.js"></script>
     <script>
         // Direct implementation of Three.js background
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const canvas = document.getElementById('bg-canvas');
-            
+
             if (!canvas || typeof THREE === 'undefined') {
                 console.error('Canvas element not found or Three.js not loaded');
                 return;
             }
-            
+
             // Scene setup
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-            
+
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            
+
             // Create particles
             const particleCount = 500;
             const particles = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
-            
+
             for (let i = 0; i < positions.length; i += 3) {
                 positions[i] = (Math.random() - 0.5) * 2000;     // x
                 positions[i + 1] = (Math.random() - 0.5) * 1000; // y
                 positions[i + 2] = (Math.random() - 0.5) * 1000; // z
             }
-            
+
             particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            
+
             // Create particle material
             const particleMaterial = new THREE.PointsMaterial({
                 color: 0x00f0ff,
@@ -710,14 +821,14 @@
                 opacity: 0.8,
                 sizeAttenuation: true
             });
-            
+
             // Create particle system
             const particleSystem = new THREE.Points(particles, particleMaterial);
             scene.add(particleSystem);
-            
+
             // Position camera
             camera.position.z = 500;
-            
+
             // Animation
             let mouseX = 0;
             let mouseY = 0;
@@ -725,41 +836,42 @@
             let targetY = 0;
             const windowHalfX = window.innerWidth / 2;
             const windowHalfY = window.innerHeight / 2;
-            
+
             // Mouse move event
-            document.addEventListener('mousemove', function(event) {
+            document.addEventListener('mousemove', function (event) {
                 mouseX = (event.clientX - windowHalfX) / 100;
                 mouseY = (event.clientY - windowHalfY) / 100;
             });
-            
+
             // Animation loop
             function animate() {
                 requestAnimationFrame(animate);
-                
+
                 targetX = mouseX * 0.5;
                 targetY = mouseY * 0.5;
-                
+
                 particleSystem.rotation.x += 0.0005;
                 particleSystem.rotation.y += 0.0005;
-                
+
                 particleSystem.rotation.x += (targetY - particleSystem.rotation.x) * 0.01;
                 particleSystem.rotation.y += (targetX - particleSystem.rotation.y) * 0.01;
-                
+
                 renderer.render(scene, camera);
             }
-            
+
             // Handle window resize
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
-            
+
             // Start animation
             animate();
-            
+
             console.log('Three.js background initialized with', particleCount, 'particles');
         });
     </script>
 </body>
+
 </html>
