@@ -1,9 +1,3 @@
-/**
- * Main JavaScript file for Madhusanka Nayanajith's Portfolio
- * Author: Madhusanka Nayanajith
- * This file handles general site functionality and initializes components
- */
-
 // Use strict mode to catch common coding errors and "unsafe" actions
 'use strict';
 
@@ -43,7 +37,7 @@
         }
         
         // Log initialization success (dev only)
-        console.log('Portfolio initialized successfully');
+        //console.log('Portfolio initialized successfully');
     });
 
     /**
@@ -223,3 +217,86 @@ window.addEventListener('load', function() {
         console.error('Error during initialization:', error);
     }
 });
+
+// Add these security enhancements to your existing main.js
+
+/**
+ * Enhanced sanitizeHTML function with additional security measures
+ */
+function sanitizeHTML(html) {
+    // First level: Use DOMParser
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+
+    // Second level: Remove potentially dangerous elements and attributes
+    const dangerousElements = ['script', 'style', 'iframe', 'object', 'embed', 'form'];
+    const dangerousAttributes = ['onclick', 'onload', 'onerror', 'onmouseover', 'javascript:'];
+
+    // Remove dangerous elements
+    dangerousElements.forEach(tag => {
+        const elements = doc.getElementsByTagName(tag);
+        while (elements.length > 0) {
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    });
+
+    // Remove dangerous attributes
+    const allElements = doc.getElementsByTagName('*');
+    for (let i = 0; i < allElements.length; i++) {
+        const attrs = allElements[i].attributes;
+        for (let j = attrs.length - 1; j >= 0; j--) {
+            const attrName = attrs[j].name.toLowerCase();
+            if (dangerousAttributes.some(attr => attrName.includes(attr))) {
+                allElements[i].removeAttribute(attrs[j].name);
+            }
+        }
+    }
+
+    return doc.body.firstChild;
+}
+
+/**
+ * Enhanced error handling
+ */
+window.addEventListener('error', function (e) {
+    console.error('Runtime error:', {
+        message: e.message,
+        filename: e.filename,
+        lineno: e.lineno,
+        colno: e.colno
+    });
+    // Prevent error from showing in console in production
+    if (process.env.NODE_ENV === 'production') {
+        return false;
+    }
+});
+
+/**
+ * Add security checks to project filtering
+ */
+function filterProjects(category) {
+    // Sanitize category input
+    category = securityUtils.sanitizeInput(category);
+
+    projectCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        // Sanitize cardCategory
+        if (!cardCategory || typeof cardCategory !== 'string') {
+            return;
+        }
+
+        if (category === 'all' || category === cardCategory) {
+            card.style.display = 'block';
+            requestAnimationFrame(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+        } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+}
