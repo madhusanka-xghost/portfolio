@@ -1,9 +1,3 @@
-/**
- * Custom styles for Madhusanka Nayanajith's Portfolio
- * Author: Madhusanka Nayanajith
- * Description: Custom styling for cybersecurity portfolio
- */
-
 /* Base & Resets */
 html {
   scroll-behavior: smooth;
@@ -15,6 +9,11 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  /* Prevent text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ::selection {
@@ -46,6 +45,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -56,9 +56,11 @@ body {
   0% {
     box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(0, 240, 255, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
   }
@@ -68,18 +70,23 @@ body {
   0% {
     transform: translate(0);
   }
+
   20% {
     transform: translate(-2px, 2px);
   }
+
   40% {
     transform: translate(-2px, -2px);
   }
+
   60% {
     transform: translate(2px, 2px);
   }
+
   80% {
     transform: translate(2px, -2px);
   }
+
   100% {
     transform: translate(0);
   }
@@ -89,15 +96,19 @@ body {
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
 
 @keyframes blink {
-  0%, 100% {
+
+  0%,
+  100% {
     border-color: transparent;
   }
+
   50% {
     border-color: #c000ff;
   }
@@ -174,7 +185,7 @@ section.visible {
   width: 100%;
   height: 100%;
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
   z-index: -1;
@@ -252,7 +263,7 @@ section.visible {
   h1 {
     font-size: 2.5rem;
   }
-  
+
   h2 {
     font-size: 2rem;
   }
