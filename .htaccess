@@ -67,10 +67,3 @@ ErrorDocument 404 /error/404.html
     Order Allow,Deny
     Deny from all
 </FilesMatch>
-
-# Block view-source protocol
-
-<IfModule mod_rewrite.c>
-    RewriteCond %{HTTP_REFERER} ^view-source: [NC]
-    RewriteRule ^ - [F,L]
-</IfModule>
